@@ -1,22 +1,47 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll double
-int solve(){
+void solve(){
     string str;
     cin>>str;
-    vector <int> v;
-    for(auto x:str){
-        v.push_back(x-'0');
-    }
-    int n=v.size();
-    int count=0;
-    for(int i=0;i<n;i++){
-        if(v[i]>=5){
-            count++;
+    
+    ll n=str.size();
+    // int count=0;
+    // ll pos=n-1;
+    ll flag=0;
+    ll num=n;
+    for(ll i=n-1;i>=0;i--){
+        if(flag==1){
+        if(str[i]<='8'){
+            str[i]++;
+        }
+        else if(str[i]=='9'){
+            str[i]='0';
+            num=i;
+            flag=1;
+            continue;
+        }    
+        }
+        if(str[i]>='5'){
+            num=i;
+            str[i]='0';
+            flag=1;
+        }
+        else{
+            flag=0;
         }
     }
-    cout<<count<<'\n';
-    return 0;
+
+    if(flag==1){
+        str='1'+str;
+    }
+    if(num!=n){
+        n=str.size();
+        for(ll i=n-1;i>=num+1;i--){
+            str[i]='0';
+        }
+    }
+    cout<<str<<'\n';
 }
 int main(){
     int t;

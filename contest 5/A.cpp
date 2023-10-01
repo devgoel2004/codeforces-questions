@@ -7,10 +7,26 @@ using namespace std;
 #define S second
 #define range(a,i,n) for(int i=a;i<n;i++)
 #define M 10e7
-bool isEven(int x){
-    return (!(x&1));
-}
+int a[101]={0};
 void solve(){
+    ll n,k;
+    cin>>n>>k;
+    ll arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    bool f = false;
+    for(int i=0;i<n;i++){
+        if(arr[i]==k){
+            cout<<"YES\n";
+            f=true;
+            break;
+        }
+    }
+    if(!f){
+        cout<<"NO\n";
+    }
+    // cout<<"NO\n";
 
 }
 int main(){
