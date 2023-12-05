@@ -13,7 +13,19 @@ bool isEven(int x){
     return (!(x&1));
 }
 void solve(){
-
+    ll n;
+    cin>>n;
+    ll x,sum=0;
+    for(int i=0;i<n;i++){
+        cin>>x;
+        sum+=x;
+    }
+    if(isEven(sum)){
+        cout<<"Bob\n";
+    }
+    else{
+        cout<<"Alice\n";
+    }
 }
 int main(){
     ios::sync_with_stdio(false);cin.tie(0);

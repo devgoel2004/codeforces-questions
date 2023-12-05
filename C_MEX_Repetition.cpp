@@ -7,13 +7,24 @@ using namespace std;
 #define S second
 #define range(a,i,n) for(int i=a;i<n;i++)
 #define M 10e7
-#define e end
-#define b begin
 bool isEven(int x){
     return (!(x&1));
 }
 void solve(){
-
+    ll n,m;
+    cin>>n>>m;
+    vector <ll> arr(n);
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    if(m%(n+1)==0){
+        for(auto x:arr){
+            cout<<x<<" ";
+        }
+    }
+    else{
+        
+    }
 }
 int main(){
     ios::sync_with_stdio(false);cin.tie(0);

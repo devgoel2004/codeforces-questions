@@ -13,7 +13,24 @@ bool isEven(int x){
     return (!(x&1));
 }
 void solve(){
-
+    ll n;
+    cin>>n;
+    vector <ll> v(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+    }
+    map <int,int> mp;
+    for(int i=0;i<n;i++){
+        // p.push_back({i,v[i]});
+        mp[v[i]]=i;
+    }
+    int ans=0;
+    for(int i=1;i<n;i++){
+        if(mp[i] > mp[i+1]){
+            ans++;
+        }
+    }
+    cout<<ans<<'\n';
 }
 int main(){
     ios::sync_with_stdio(false);cin.tie(0);
