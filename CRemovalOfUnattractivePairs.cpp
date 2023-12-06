@@ -24,7 +24,23 @@ bool isEven(int x){
     return (!(x&1));
 }
 void solve(){
-
+    ll n;
+    cin>>n;
+    string s;
+    cin>>s;
+    stack <int> stk;
+    for(int i=0;i<n;i++){
+        if(stk.empty()){
+            stk.push(s[i]);
+        }
+        else if(s[i]==stk.top()){
+            stk.push(s[i]);
+        }
+        else{
+            stk.pop();
+        }
+    }
+    cout<<stk.size()<<'\n';
 }
 int main(){
     ios::sync_with_stdio(false);cin.tie(0);

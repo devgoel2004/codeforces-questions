@@ -9,22 +9,25 @@ using namespace std;
 #define M 10e7
 #define e end
 #define b begin
-bool isLower(char s){
-    if(s>=97 && s<=122){
-        return true;
-    }return false;
-}
-bool isUpper(char s){
-    if(s>=65 && s<=90){
-        return true;
-    }
-    return false;
-}
 bool isEven(int x){
     return (!(x&1));
 }
 void solve(){
-
+    string s;
+    cin>>s;
+    int x = s[0]-61;
+    int y = s[1]-48; 
+    for(char c='a';c<='h';c++){
+        if(c!=s[0]){
+            cout<<c<<s[1]<<" ";
+        }
+    }
+    for(int i=1;i<=8;i++){
+        if(i!=y){
+            cout<<s[0]<<i<<" ";
+        }
+    }
+    cout<<'\n';
 }
 int main(){
     ios::sync_with_stdio(false);cin.tie(0);
